@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-press-start-2p: var(--font-press-start-2p);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+.word-spacing-wide {
+  word-spacing: 0.25em;
+}
+
+.word-spacing-wider {
+  word-spacing: 0.5em;
+}
+
+.word-spacing-widest {
+  word-spacing: 1em;
+}
+
+@keyframes letterAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-letter {
+  display: inline-block;
+  opacity: 0;
+  animation: letterAppear 2s ease forwards;
+}
+
+
+
