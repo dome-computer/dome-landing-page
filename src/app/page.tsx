@@ -27,25 +27,20 @@ export default function Home() {
       <header className="w-full flex justify-center py-10">
         <nav className="w-full max-w-[650px] flex justify-between items-center text-sm">
           <Link href="/" className="flex items-center gap-1">
-            See the mission
+            read our mission
             <IoIosArrowRoundForward className="inline-block" size={18} />
           </Link>
           <div className="flex gap-4">
             <Link
               className="bg-black p-3 rounded-[4px] text-white text-xs font-bold"
-              href="/about"
+              href="#pricing"
             >
               Pricing
             </Link>
-            <Link
-              className="bg-black p-3 rounded-[4px] text-white text-xs font-bold"
-              href="/contact"
-            >
-              Sign in
-            </Link>
-            <Link className="bg-black p-3 rounded-[4px] text-white text-xs font-bold" href="/about">Pricing</Link>
-            <Link className="bg-black p-3 rounded-[4px] text-white text-xs font-bold" href="/signup">Sign Up</Link>
-            <Link className="bg-black p-3 rounded-[4px] text-white text-xs font-bold" href="/contact">Sign in</Link>
+            <button className="bg-black p-3 rounded-[4px] text-white text-xs font-bold word-spacing-wider flex items-center justify-center">
+              Download Nōva
+              <LiaDownloadSolid className="inline-block ml-2" size={14} />
+            </button>
           </div>
         </nav>
       </header>
@@ -62,22 +57,22 @@ export default function Home() {
           ))}
         </h1>
         <h2 className="font-extrabold text-xl">
-          Introducing Novaa: Your AI Desktop Assitant
+          introducing Nōva: your ai desktop assitant
         </h2>
         <p className="text-left text-sm word-spacing-wide">
-          <span className="bg-[#ffc700] text-black font-bold italic p-1">
+          <span className="bg-[#ffc700] inline-block text-black font-bold italic p-1 -rotate-2 rounded-[4px]">
             ChatGPT kinda sucks.
           </span>{" "}
-          It has no real context over your work. Novaa lives on your computer.
+          It has no real context over your work. Nōva lives on your computer.
           It gives you direct access to powerful AI models but it can also see
           your screen in real time and work with your local files.
         </p>
         <button className="bg-black p-3 rounded-[4px] text-white text-xs font-bold word-spacing-wider flex items-center justify-center">
-          Download Novaa
+          Download Nōva
           <LiaDownloadSolid className="inline-block ml-2" size={14} />
         </button>
       </section>
-      <section className="mt-20 w-full max-w-[1200px] flex flex-col items-center gap-12">
+      <section className="mt-20 w-full max-w-[1200px] flex flex-col items-center gap-20">
         <Image
           priority
           loading="eager"
@@ -131,15 +126,11 @@ export default function Home() {
           all the good stuff
         </h2>
         <div className="flex flex-col gap-10">
-          <article className="p-8 bg-[#f5f5f5] rounded-md flex gap-20">
+          <article className="p-8 bg-[#f5f5f5] rounded-md flex flex-col md:flex-row gap-20">
             <div className=" flex flex-col gap-4 pl-6">
-              <h3 className="font-bold text-2xl">realtime screen assitance</h3>
+              <h3 className="font-bold text-2xl">see and understand your screen</h3>
               <p className="">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Blanditiis, velit voluptates ab repellendus perferendis quis
-                voluptatum asperiores neque! Non iure commodi suscipit ipsa
-                dolorum aspernatur tempora ducimus, expedita necessitatibus
-                quos?
+                Nōva can follow what&apos;s happening on your screen in real time. Whether you’re reading a document, browsing the web, or working in an app, it can summarize, explain, or take action without you having to switch context.
               </p>
             </div>
             <Image
@@ -154,15 +145,11 @@ export default function Home() {
               className="w-full max-w-5xl rounded-lg shadow-2xl"
             />
           </article>
-          <article className="p-8 bg-[#f5f5f5] rounded-md flex flex-row-reverse gap-20">
+          <article className="p-8 bg-[#f5f5f5] rounded-md flex flex-col md:flex-row-reverse gap-20">
             <div className=" flex flex-col gap-4 pl-6">
-              <h3 className="font-bold text-2xl">complete filesystem access</h3>
+              <h3 className="font-bold text-2xl">work seamlessly with your files</h3>
               <p className="">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Blanditiis, velit voluptates ab repellendus perferendis quis
-                voluptatum asperiores neque! Non iure commodi suscipit ipsa
-                dolorum aspernatur tempora ducimus, expedita necessitatibus
-                quos?
+                From opening documents to organizing folders, Nōva interacts directly with your file system. You decide what it can access, and it helps you edit, create, or manage files just by asking.
               </p>
             </div>
             <Image
@@ -177,15 +164,11 @@ export default function Home() {
               className="w-full max-w-5xl rounded-lg shadow-2xl"
             />
           </article>
-          <article className="p-8 bg-[#f5f5f5] rounded-md flex gap-20">
+          <article className="p-8 bg-[#f5f5f5] rounded-md flex flex-col md:flex-row gap-20">
             <div className=" flex flex-col gap-4 pl-6">
-              <h3 className="font-bold text-2xl">access to many ai models</h3>
+              <h3 className="font-bold text-2xl">choose from multiple ai odels</h3>
               <p className="">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Blanditiis, velit voluptates ab repellendus perferendis quis
-                voluptatum asperiores neque! Non iure commodi suscipit ipsa
-                dolorum aspernatur tempora ducimus, expedita necessitatibus
-                quos?
+                Not all tasks need the same kind of intelligence. Nōva lets you switch between leading AI models so you always get the right mix of speed, accuracy, and creativity for the job.
               </p>
             </div>
             <Image
@@ -203,33 +186,56 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="my-20">
+      <section className="my-20 flex flex-col w-full max-w-[700px] items-center">
         <h2 className="text-center my-10 font-bold text-4xl">
           frequently asked question
         </h2>
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
+            <AccordionTrigger className="font-bold">What is Nōva?</AccordionTrigger>
             <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
+              Nōva is an AI desktop assistant that helps you interact with your computer using natural language. You can ask it to perform tasks, summarize what&apos;s on your screen, or manage files directly from your desktop.
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="item-1">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
+
+          <AccordionItem value="item-2">
+            <AccordionTrigger className="font-bold">How is Nōva different from ChatGPT?</AccordionTrigger>
             <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
+              Unlike ChatGPT, Nōva doesn&apos;t just answer questions — it can also see your screen in real time, access your file system, and connect to multiple AI models so you can choose the right one for each task.
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="item-1">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
+
+          <AccordionItem value="item-3">
+            <AccordionTrigger className="font-bold">Can Nōva see everything on my screen?</AccordionTrigger>
             <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
+              Yes, but only if you allow it. You&apos;re always in control — you can decide what parts of your screen Nōva is able to process.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-4">
+            <AccordionTrigger className="font-bold">Is my data safe with Nōva?</AccordionTrigger>
+            <AccordionContent>
+              Absolutely. All interactions are permission-based. Your files and screen data are only processed when you authorize it, and Nōva never shares your data without your consent.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-5">
+            <AccordionTrigger className="font-bold">What can Nōva do with my files?</AccordionTrigger>
+            <AccordionContent>
+              With your approval, Nōva can open, organize, edit, or summarize your files. For example, it can draft a report from your notes, clean up folders, or generate presentations.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-6">
+            <AccordionTrigger className="font-bold">Can I customize Nōva?</AccordionTrigger>
+            <AccordionContent>
+              Yes. You can choose which models it uses, limit what it can access (screen, files, apps), and adjust its behavior to fit your workflow.
             </AccordionContent>
           </AccordionItem>
         </Accordion>
       </section>
 
-      <section className="mb-20 w-full max-w-[1200px]">
+      <section id="pricing" className="mb-20 w-full max-w-[1200px]">
         <h2 className="text-center my-10 font-bold text-4xl mb-16">
           Choose Your Plan
         </h2>
@@ -244,7 +250,7 @@ export default function Home() {
               <span className="text-4xl font-bold">$0</span>
               <span className="text-gray-600">/month</span>
             </div>
-            <button className="w-full py-3 px-6 border border-teal-500 text-teal-500 rounded-md font-semibold hover:bg-teal-50 transition-colors mb-8">
+            <button className="w-full py-3 px-6 border border-[#ffc700] text-[#ffc700] rounded-md font-semibold hover:bg-teal-50 transition-colors mb-8">
               Start for Free
             </button>
             <div>
@@ -290,7 +296,7 @@ export default function Home() {
               <span className="text-4xl font-bold">From $20</span>
               <span className="text-gray-600">/month</span>
             </div>
-            <button className="w-full py-3 px-6 bg-[#ffc700] text-black rounded-md font-semibold hover:bg-teal-700 transition-colors mb-8">
+            <button className="w-full py-3 px-6 bg-[#ffc700] text-black rounded-md font-semibold hover:bg-black hover:text-white transition-colors mb-8">
               Get Started
             </button>
             <div className="text-sm text-gray-600 mb-6">
@@ -338,16 +344,37 @@ export default function Home() {
         <h2 className="text-center font-bold text-4xl">get started for free</h2>
         <p className="text-center">chatGPT on steroids</p>
         <button className="bg-[#ffc700] p-3 rounded-[4px] text-black text-xs font-bold word-spacing-wider flex items-center justify-center">
-          Download Novaa
+          Download Nōva
           <LiaDownloadSolid className="inline-block ml-2" size={14} />
         </button>
       </section>
 
       <footer className="my-10 w-full max-w-[1200px]">
         <hr className="bg-black" />
-        <div className="my-10 flex justify-between">
-          <h1>dome</h1>
-          <p>&copy; 2025 dome computer</p>
+        <div className="my-5 flex justify-between">
+          <div className="flex items-center gap-1">
+            <Image
+              src="/favicon.ico"
+              alt="Dome Logo"
+              width={35}
+              height={35}
+              className="mb-1"
+            >
+
+            </Image>
+            <h1 className="text-left font-press-start-2p text-sm">
+              {"DΩME".split("").map((letter, index) => (
+                <span
+                  key={index}
+                  className="animate-letter"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  {letter}
+                </span>
+              ))}
+            </h1>
+          </div>
+          <p className="text-xs font-semibold">&copy; 2025 dome computer</p>
         </div>
       </footer>
     </main>
