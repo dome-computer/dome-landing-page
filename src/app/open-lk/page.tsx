@@ -3,10 +3,10 @@ import { handle_get_cookie } from "@/shared/server-functions";
 import { useSearchParams } from "next/navigation";
 import React from "react";
 
-export default React.memo((props: any) => {
+function OpenLK() {
     const searchParams = useSearchParams()
 
-    const handle_rdr_to_novaa_desktop = React.useCallback(async () => {
+    const handleRedirectToNovaaDesktop = React.useCallback(async () => {
         if (searchParams.get('tkn')) {
             const scope = await handle_get_cookie('nva-lgn-scp')
             if (!scope) {
@@ -16,15 +16,17 @@ export default React.memo((props: any) => {
         }else{
             location.assign(location.origin)
         }
-    }, [])
+    }, [searchParams]) // Added searchParams to dependency array
 
     React.useLayoutEffect(() => {
-        
-    }, [])
+        handleRedirectToNovaaDesktop() // Actually using the function
+    }, [handleRedirectToNovaaDesktop])
 
     return(
         <div>
             Continue in the Novaa desktop
         </div>
     )
-})
+}
+
+export default React.memo(OpenLK)

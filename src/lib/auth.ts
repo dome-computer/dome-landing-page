@@ -2,12 +2,12 @@ import { betterAuth } from "better-auth";
 import { nextCookies } from "better-auth/next-js";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { mfirestore_client, mfirestore_db } from "@/shared/firestore-handlers/firestore-config";
-import { createAuthEndpoint, createAuthMiddleware } from "better-auth/api";
+import { /* createAuthEndpoint, */ createAuthMiddleware } from "better-auth/api";
 import jwt from "jsonwebtoken"
-import { cookies } from "next/headers";
-import { BASE_URL } from "@/shared/constants";
-import { createAuthClient } from "better-auth/client";
-
+/* import { cookies } from "next/headers";
+ */import { BASE_URL } from "@/shared/constants";
+/* import { createAuthClient } from "better-auth/client";
+ */
 export const auth = betterAuth({
     database: mongodbAdapter(mfirestore_db, {
         client: mfirestore_client
@@ -63,8 +63,20 @@ export const novaa_desktop_auth = betterAuth({
             console.log("ctx.context?.session", ctx.context?.session)
             console.log("ctx.headers?.get('rs')222ssss ", ctx.request)
             const expiry = ctx.context.session?.session.expiresAt.getTime() || new Date(Date.now() + (1000 * 60 * 60 * 24 * 6)).getTime()
-            const signed_jwt = jwt.sign({...ctx.context.session as any, exp: expiry}, process.env.JWT_SECRET as string)
-            ctx.redirect(BASE_URL+`open-lk?tkn=${signed_jwt}`)
+            
+            if (ctx.context.session) {
+                const sessionPayload = {
+                    session: {
+                        ...ctx.context.session.session,
+                    },
+                    user: {
+                        ...ctx.context.session.user,
+                    },
+                    exp: expiry
+                };
+                const signed_jwt = jwt.sign(sessionPayload, process.env.JWT_SECRET as string)
+                ctx.redirect(`${BASE_URL}open-lk?tkn=${signed_jwt}`)
+            }
         }),
     },
     plugins: [nextCookies()], // make sure this is the last plugin in the array

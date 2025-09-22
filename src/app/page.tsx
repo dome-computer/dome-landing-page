@@ -20,7 +20,7 @@ export default function Home() {
 
   React.useLayoutEffect(() => {
     get_session()
-  }, [])
+  }, [get_session])
 
   return (
     <main className="w-[90%] min-h-screen flex flex-col items-center m-auto">
