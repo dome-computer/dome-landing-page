@@ -44,7 +44,7 @@ const formSchema = z.object({
 });
 
 
-export default React.memo((props: any) => {
+const SignUpComponent = React.memo((props: any) => {
     // 1. Define your form.
     const searchParams = useSearchParams()
     const form = useForm<z.infer<typeof formSchema>>({
@@ -204,3 +204,5 @@ export default React.memo((props: any) => {
         </div>
   )
 })
+
+export default SignUpComponent
