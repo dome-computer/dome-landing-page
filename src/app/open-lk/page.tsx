@@ -1,9 +1,8 @@
 "use client"
 import { get_novaa_desktop_token } from "@/shared/server-functions";
-import { useSearchParams } from "next/navigation";
 import React from "react";
 
-export default React.memo((props: any) => {
+const OpenLk = React.memo((props: any) => {
     const [loading, set_loading] = React.useState<boolean>(true)
 
     const handle_rdr_to_novaa_desktop = React.useCallback(async () => {
@@ -43,3 +42,5 @@ export default React.memo((props: any) => {
         </div>
     )
 })
+
+export default OpenLk
