@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { use } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -17,7 +17,6 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { authClient, novaaDesktopAuthClient } from "@/lib/client";
-import { useRouter, useSearchParams } from "next/navigation";
 import { GrGoogle } from "react-icons/gr";
 import { handle_set_cookie } from "@/shared/server-functions";
 
@@ -44,9 +43,9 @@ const formSchema = z.object({
 });
 
 
-const SignUpComponent = React.memo((props: any) => {
+const SignUpComponent = React.memo(({searchParams,}: {searchParams: Promise<{ rs?: string; scope?: string }>}) => {
     // 1. Define your form.
-    const searchParams = useSearchParams()
+    const search_params = use(searchParams)
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -62,12 +61,12 @@ const SignUpComponent = React.memo((props: any) => {
     const onSubmit = React.useCallback(async (values: z.infer<typeof formSchema>) => {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
-        console.log(values, searchParams.get("rs"))
+        console.log(values, search_params.rs)
         const { data, error } = await novaaDesktopAuthClient.signUp.email({
                 email: values.email, // user email address
                 password: values.password, // user password -> min 8 characters by default
                 name: values.fullname, // user display name
-                callbackURL: !searchParams.get("rs") ? "/dashboard" : undefined // A URL to redirect to after the user verifies their email (optional)
+                callbackURL: !search_params.rs ? "/dashboard" : undefined // A URL to redirect to after the user verifies their email (optional)
         }, {
             onRequest: (ctx) => {
                 //show loading
@@ -90,8 +89,8 @@ const SignUpComponent = React.memo((props: any) => {
     }, [])
 
     const handle_signup_with_google = React.useCallback(async () => {
-        if (searchParams.get("rs") && searchParams.get("rs") == 'novaa.desktop' && searchParams.get("scope")) {
-            await handle_set_cookie("nva-lgn-scp", searchParams.get("scope") as string)
+        if (search_params.rs && search_params.rs == 'novaa.desktop' && search_params.scope) {
+            await handle_set_cookie("nva-lgn-scp", search_params.scope as string)
             const request_signin = await novaaDesktopAuthClient.signIn.social({
                 provider: "google", // or any other provider id
             })
