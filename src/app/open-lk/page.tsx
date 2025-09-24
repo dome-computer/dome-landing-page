@@ -14,7 +14,7 @@ export default React.memo((props: any) => {
         }else{
             location.assign(location.origin)
         }
-    }, [])
+    }, []) // Added searchParams to dependency array
 
     React.useLayoutEffect(() => {
         handle_rdr_to_novaa_desktop()
