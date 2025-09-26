@@ -26,7 +26,7 @@ export default function Home() {
     <main className="w-[90%] min-h-screen flex flex-col items-center m-auto">
       <header className="w-full flex justify-center py-10">
         <nav className="w-full max-w-[650px] flex justify-between items-center text-sm">
-          <Link href="/" className="flex items-center gap-1">
+          <Link href="/mission" className="flex items-center gap-1">
             read our mission
             <IoIosArrowRoundForward className="inline-block" size={18} />
           </Link>
