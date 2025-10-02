@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { mfirestore_db } from "@/shared/firestore-handlers/firestore-config";
 import { ObjectId } from "mongodb";
 
@@ -69,3 +69,9 @@ export const GET = (/* req: Request */) => {
 
   return NextResponse.json({});
 };
+
+export const OPTIONS = async (request: NextRequest) => {
+  return new NextResponse('', {
+    status: 200
+  })
+}

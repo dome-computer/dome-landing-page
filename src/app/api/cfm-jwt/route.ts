@@ -1,6 +1,6 @@
 /* import type { NextApiRequest, NextApiResponse } from 'next'
  */ import jwt from "jsonwebtoken";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export const POST = async (req: Request) => {
   // if (req.method == "post") {
@@ -26,3 +26,9 @@ export const GET = (/* req: Request */) => {
 
   return NextResponse.json({});
 };
+
+export const OPTIONS = async (request: NextRequest) => {
+  return new NextResponse('', {
+    status: 200
+  })
+}
