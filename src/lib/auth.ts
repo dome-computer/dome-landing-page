@@ -49,11 +49,6 @@ export const novaa_desktop_auth = betterAuth({
     database: mongodbAdapter(mfirestore_db, {
         client: mfirestore_client
     }),
-    // advanced: {
-    //     crossSubDomainCookies: { enabled: true },
-    //     defaultCookieAttributes: { sameSite: "none", secure: true },
-    // },
-    
     emailAndPassword: {
         enabled: true,
     },
