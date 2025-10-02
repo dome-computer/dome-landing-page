@@ -2,6 +2,7 @@
 import { auth } from "@/lib/auth"
 import { cookies, headers } from "next/headers"
 import jwt from "jsonwebtoken"
+import { BASE_URL } from "./constants"
 
 export const handle_get_session = async () => {
     return await auth.api.getSession({
@@ -45,4 +46,8 @@ export const handle_get_cookie = async (key: string) => {
 export const handle_remove_cookie = async (key: string) => {
     const cki = await cookies()
     cki.delete(key)
+}
+
+export const handle_get_bURL = async () => {
+    return BASE_URL
 }

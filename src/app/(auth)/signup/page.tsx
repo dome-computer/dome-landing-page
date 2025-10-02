@@ -18,7 +18,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { authClient, novaaDesktopAuthClient } from "@/lib/client";
 import { GrGoogle } from "react-icons/gr";
-import { handle_set_cookie } from "@/shared/server-functions";
+import { handle_get_bURL, handle_set_cookie } from "@/shared/server-functions";
 
 const formSchema = z.object({
   fullname: z.string().min(2, {
@@ -89,6 +89,8 @@ const SignUpComponent = React.memo(({searchParams,}: {searchParams: Promise<{ rs
     }, [])
 
     const handle_signup_with_google = React.useCallback(async () => {
+        const bURL = await handle_get_bURL()
+        console.log("bURLbURLbURL", bURL)
         if (search_params.rs && search_params.rs == 'novaa.desktop' && search_params.scope) {
             await handle_set_cookie("nva-lgn-scp", search_params.scope as string)
             const request_signin = await novaaDesktopAuthClient.signIn.social({
