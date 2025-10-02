@@ -1,5 +1,6 @@
 /* import type { NextApiRequest, NextApiResponse } from 'next'
- */ import jwt from "jsonwebtoken";
+ */ import { ALLOWED_ORIGIN } from "@/shared/constants";
+import jwt from "jsonwebtoken";
 import { NextRequest, NextResponse } from "next/server";
 
 export const POST = async (req: Request) => {
@@ -29,6 +30,12 @@ export const GET = (/* req: Request */) => {
 
 export const OPTIONS = async (request: NextRequest) => {
   return new NextResponse('', {
-    status: 200
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      'Access-Control-Allow-Credentials': 'true',
+    },
   })
 }

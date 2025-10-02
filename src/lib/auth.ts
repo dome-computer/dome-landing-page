@@ -44,7 +44,7 @@ export const auth = betterAuth({
 
 export const novaa_desktop_auth = betterAuth({
     baseURL: BASE_URL,
-    // trustedOrigins: ["https://dome.computer/", "http://localhost"],
+    trustedOrigins: ["https://dome.computer", "http://localhost"],
     basePath: `api/novaa-desktop-auth`,
     database: mongodbAdapter(mfirestore_db, {
         client: mfirestore_client
