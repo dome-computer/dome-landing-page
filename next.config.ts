@@ -21,18 +21,18 @@ const nextConfig: NextConfig = {
           {key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization'},
           {key: 'Access-Control-Allow-Credentials', value: 'true'},
         ],
-        source: "/"
+        source: "/api/(.*)"
       },
-      {
-        headers: [
-          // {key: 'Access-Control-Allow-Origin', value: '*'},
-          {key: 'Access-Control-Allow-Origin', value: process.env.NODE_ENV === 'production' ? "https://dome.computer" : '*'},
-          {key: 'Access-Control-Allow-Methods', value: 'GET, POST, OPTIONS'},
-          {key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization'},
-          {key: 'Access-Control-Allow-Credentials', value: 'true'},
-        ],
-        source: "/api/novaa-desktop-auth/sign-in/social"
-      },
+      // {
+      //   headers: [
+      //     // {key: 'Access-Control-Allow-Origin', value: '*'},
+      //     {key: 'Access-Control-Allow-Origin', value: process.env.NODE_ENV === 'production' ? "https://dome.computer" : '*'},
+      //     {key: 'Access-Control-Allow-Methods', value: 'GET, POST, OPTIONS'},
+      //     {key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization'},
+      //     {key: 'Access-Control-Allow-Credentials', value: 'true'},
+      //   ],
+      //   source: "/api/novaa-desktop-auth/sign-in/social"
+      // },
     ]
   }
 };

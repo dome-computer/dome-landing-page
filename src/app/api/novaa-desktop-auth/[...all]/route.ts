@@ -19,14 +19,14 @@ export const OPTIONS = async (request: NextRequest) => {
     })
 }
 
-export const GET = async (request: NextRequest) => {
-    const get = toNextJsHandler(novaa_desktop_auth.handler)
-    return await get.GET(request)
-}
+// export const GET = async (request: NextRequest) => {
+//     const get = toNextJsHandler(novaa_desktop_auth.handler)
+//     return await get.GET(request)
+// }
 
-export const POST = async (request: NextRequest) => {
-    const get = toNextJsHandler(novaa_desktop_auth.handler)
-    return await get.POST(request)
-}
+// export const POST = async (request: NextRequest) => {
+//     const get = toNextJsHandler(novaa_desktop_auth.handler)
+//     return await get.POST(request)
+// }
 
-// export const { GET, POST } = toNextJsHandler(novaa_desktop_auth.handler);
+export const { GET, POST } = toNextJsHandler(novaa_desktop_auth.handler);
