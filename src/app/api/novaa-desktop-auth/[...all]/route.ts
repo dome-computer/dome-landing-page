@@ -19,4 +19,14 @@ export const OPTIONS = async (request: NextRequest) => {
     })
 }
 
-export const { GET, POST } = toNextJsHandler(novaa_desktop_auth.handler);
+export const GET = () => {
+    const get = toNextJsHandler(novaa_desktop_auth.handler)
+    return get.GET
+}
+
+export const POST = () => {
+    const get = toNextJsHandler(novaa_desktop_auth.handler)
+    return get.POST
+}
+
+// export const { GET, POST } = toNextJsHandler(novaa_desktop_auth.handler);
