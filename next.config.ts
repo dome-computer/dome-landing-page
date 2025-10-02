@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
           {key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization'},
           {key: 'Access-Control-Allow-Credentials', value: 'true'},
         ],
-        source: "https://dome.computer"
+        source: "/"
       },
       {
         headers: [
@@ -29,7 +29,7 @@ const nextConfig: NextConfig = {
           {key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization'},
           {key: 'Access-Control-Allow-Credentials', value: 'true'},
         ],
-        source: "https://dome.computer/api/novaa-desktop-auth/sign-in/social"
+        source: "/api/novaa-desktop-auth/sign-in/social"
       },
     ]
   }
