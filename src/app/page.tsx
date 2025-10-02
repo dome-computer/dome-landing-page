@@ -4,8 +4,8 @@ import Image from "next/image";
 import { LiaDownloadSolid } from "react-icons/lia";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { RiWindowsFill } from "react-icons/ri";
-import { useState } from "react";
-
+/* import { useState } from "react";
+ */
 import {
   Accordion,
   AccordionContent,
@@ -25,13 +25,13 @@ export default function Home() {
     get_session();
   }, [get_session]);
 
-  const [showMessage, setShowMessage] = useState(false);
+  /* const [showMessage, setShowMessage] = useState(false);
 
   const handleClick = () => {
     setShowMessage(true);
     // Optional: hide the message after a few seconds
     setTimeout(() => setShowMessage(false), 3000);
-  };
+  }; */
 
   return (
     <main className="w-[90%] min-h-screen flex flex-col items-center m-auto">
@@ -49,10 +49,13 @@ export default function Home() {
               Pricing
             </Link>
 
-            <button className="bg-black cursor-pointer p-3 rounded-[4px] text-white text-xs font-bold word-spacing-wider flex items-center justify-center">
+            <Link
+              href="https://drive.google.com/uc?export=download&id=10zvsRbx7FJ8KIxMNBHojv1CurgijdC0D"
+              className="bg-black cursor-pointer p-3 rounded-[4px] text-white text-xs font-bold word-spacing-wider flex items-center justify-center"
+            >
               Download Nōva
               <LiaDownloadSolid className="inline-block ml-2" size={14} />
-            </button>
+            </Link>
           </div>
         </nav>
       </header>
@@ -81,20 +84,20 @@ export default function Home() {
           soon.
         </p>
         <div>
-          <button
-            onClick={handleClick}
+          <Link
+            href="https://drive.google.com/uc?export=download&id=10zvsRbx7FJ8KIxMNBHojv1CurgijdC0D"
             className="bg-black p-3 cursor-pointer rounded-[4px] text-white text-xs font-bold flex gap-2 items-center justify-center"
           >
             <RiWindowsFill />
             Download for Windows
             {/*           <LiaDownloadSolid className="inline-block ml-2" size={14} />
              */}{" "}
-          </button>
-          {showMessage && (
+          </Link>
+          {/* {showMessage && (
             <p className="text-xs text-[#ffc700] font-bold mt-2">
               Launching in few days
             </p>
-          )}
+          )} */}
         </div>
       </section>
       <section className="mt-20 w-full max-w-[1200px] flex flex-col items-center gap-20">
@@ -302,10 +305,13 @@ export default function Home() {
               <span className="text-4xl font-bold">$0</span>
               <span className="text-gray-600">/month</span>
             </div>
-            <button className="w-full cursor-pointer py-3 px-6 border border-[#ffc700] text-[#ffc700] rounded-md font-semibold hover:bg-teal-50 transition-colors mb-8">
+            <Link
+              href="https://drive.google.com/uc?export=download&id=10zvsRbx7FJ8KIxMNBHojv1CurgijdC0D"
+              className="w-full cursor-pointer py-3 px-6 border border-[#ffc700] text-[#ffc700] rounded-md font-semibold hover:bg-teal-50 transition-colors mb-8"
+            >
               Download Nōva
               <LiaDownloadSolid className="inline-block ml-2" size={14} />
-            </button>
+            </Link>
             <div>
               <h4 className="font-semibold mb-4">Get Started with:</h4>
               <ul className="space-y-3">
@@ -353,10 +359,13 @@ export default function Home() {
                 customers
               </p>
             </div>
-            <button className="w-full cursor-pointer py-3 px-6 bg-[#ffc700] text-black rounded-md font-semibold hover:bg-black hover:text-white transition-colors mb-8">
+            <Link
+              href="https://drive.google.com/uc?export=download&id=10zvsRbx7FJ8KIxMNBHojv1CurgijdC0D"
+              className="w-full cursor-pointer py-3 px-6 bg-[#ffc700] text-black rounded-md font-semibold hover:bg-black hover:text-white transition-colors mb-8"
+            >
               Download Nōva
               <LiaDownloadSolid className="inline-block ml-2" size={14} />
-            </button>
+            </Link>
             <div className="text-sm text-gray-600 mb-6">
               <p>25k Workflow executions</p>
               <a href="#" className="text-teal-600 hover:underline">
@@ -401,10 +410,13 @@ export default function Home() {
       <section className="flex flex-col items-center gap-4">
         <h2 className="text-center font-bold text-4xl">get started for free</h2>
         <p className="text-center">chatGPT on steroids</p>
-        <button className="bg-[#ffc700] cursor-pointer p-3 rounded-[4px] text-black text-xs font-bold word-spacing-wider flex items-center justify-center">
+        <Link
+          href="https://drive.google.com/uc?export=download&id=10zvsRbx7FJ8KIxMNBHojv1CurgijdC0D"
+          className="bg-[#ffc700] cursor-pointer p-3 rounded-[4px] text-black text-xs font-bold word-spacing-wider flex items-center justify-center"
+        >
           Download Nōva
           <LiaDownloadSolid className="inline-block ml-2" size={14} />
-        </button>
+        </Link>
       </section>
 
       <footer className="my-10 w-full max-w-[1200px]">
