@@ -3,7 +3,7 @@ import { createAuthClient } from "better-auth/react" // make sure to import from
 
 export const novaaDesktopAuthClient =  createAuthClient({
     //you can pass client configuration here
-    baseURL: BASE_URL,
+    // baseURL: BASE_URL,
     basePath: `api/novaa-desktop-auth`
 })
 
