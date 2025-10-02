@@ -1,3 +1,3 @@
 export const MONGO_FIRESTORE_URL=`mongodb://${process.env.MONGO_FIRESTORE_USERNAME}:${process.env.MONGO_FIRESTORE_PWD}@8a4feeeb-5ef2-476c-962a-f5c88b4bc542.us-central1.firestore.goog:443/default?loadBalanced=true&tls=true&authMechanism=SCRAM-SHA-256&retryWrites=false`
-export const BASE_URL = process.env.NODE_ENV == "production" ? "https://dome.computer/" : "http://localhost:3000/"
+export const BASE_URL = process.env.NODE_ENV == "production" ? "https://dome.computer" : "http://localhost:3000/"
 export const ALLOWED_ORIGIN = process.env.NODE_ENV === 'production' ? "https://dome.computer" : '*'
