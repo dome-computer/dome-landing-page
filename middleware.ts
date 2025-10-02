@@ -10,7 +10,7 @@ export default function middleware(request: NextRequest) {
   
   // Define allowed origins dynamically
   const allowedOrigins = process.env.NODE_ENV === 'production' 
-    ? ['https://dome.computer']
+    ? ['https://www.dome.computer']
     : ['http://localhost:3000', 'http://localhost:3001'];
   
   const isAllowedOrigin = origin && allowedOrigins.includes(origin);
