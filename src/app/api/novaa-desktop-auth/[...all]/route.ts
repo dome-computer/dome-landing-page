@@ -7,10 +7,11 @@ import { NextRequest, NextResponse } from "next/server";
 export const config = { api: { bodyParser: false } }
 
 export const OPTIONS = async (request: NextRequest) => {
-    return new NextResponse('', {
+    console.log("requestrequest", request)
+    return new NextResponse("Hello there options", {
         status: 200,
         headers: {
-            'Access-Control-Allow-Origin': "*",
+            'Access-Control-Allow-Origin': "https://dome.computer",
             'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
             'Access-Control-Allow-Headers': 'Content-Type, Authorization',
             'Access-Control-Allow-Credentials': 'true',
