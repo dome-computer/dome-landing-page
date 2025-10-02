@@ -15,7 +15,8 @@ const nextConfig: NextConfig = {
     return [
       {
         headers: [
-          {key: 'Access-Control-Allow-Origin', value: process.env.NODE_ENV === 'production' ? "https://dome.computer" : '*'},
+          {key: 'Access-Control-Allow-Origin', value: '*'},
+          // {key: 'Access-Control-Allow-Origin', value: process.env.NODE_ENV === 'production' ? "https://dome.computer" : '*'},
           {key: 'Access-Control-Allow-Methods', value: 'GET, POST, OPTIONS'},
           {key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization'},
           {key: 'Access-Control-Allow-Credentials', value: 'true'},
@@ -24,7 +25,8 @@ const nextConfig: NextConfig = {
       },
       {
         headers: [
-          {key: 'Access-Control-Allow-Origin', value: process.env.NODE_ENV === 'production' ? "https://dome.computer" : '*'},
+          {key: 'Access-Control-Allow-Origin', value: '*'},
+          // {key: 'Access-Control-Allow-Origin', value: process.env.NODE_ENV === 'production' ? "https://dome.computer" : '*'},
           {key: 'Access-Control-Allow-Methods', value: 'GET, POST, OPTIONS'},
           {key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization'},
           {key: 'Access-Control-Allow-Credentials', value: 'true'},
