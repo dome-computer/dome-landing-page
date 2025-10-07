@@ -50,7 +50,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href="https://drive.google.com/uc?export=download&id=10zvsRbx7FJ8KIxMNBHojv1CurgijdC0D"
+              href="https://drive.google.com/uc?export=download&id=1ARlVKhbYjjQkZJpAx5or96XNK0fs6Fbw"
               className="bg-black cursor-pointer p-3 rounded-[4px] text-white text-xs font-bold word-spacing-wider flex items-center justify-center"
             >
               Download Nōva
@@ -85,7 +85,7 @@ export default function Home() {
         </p>
         <div>
           <Link
-            href="https://drive.google.com/uc?export=download&id=10zvsRbx7FJ8KIxMNBHojv1CurgijdC0D"
+            href="https://drive.google.com/uc?export=download&id=1ARlVKhbYjjQkZJpAx5or96XNK0fs6Fbw"
             className="bg-black p-3 cursor-pointer rounded-[4px] text-white text-xs font-bold flex gap-2 items-center justify-center"
           >
             <RiWindowsFill />
@@ -306,7 +306,7 @@ export default function Home() {
               <span className="text-gray-600">/month</span>
             </div>
             <Link
-              href="https://drive.google.com/uc?export=download&id=10zvsRbx7FJ8KIxMNBHojv1CurgijdC0D"
+              href="https://drive.google.com/uc?export=download&id=1ARlVKhbYjjQkZJpAx5or96XNK0fs6Fbw"
               className="w-full cursor-pointer py-3 px-6 border border-[#ffc700] text-[#ffc700] rounded-md font-semibold hover:bg-teal-50 transition-colors mb-8"
             >
               Download Nōva
@@ -360,7 +360,7 @@ export default function Home() {
               </p>
             </div>
             <Link
-              href="https://drive.google.com/uc?export=download&id=10zvsRbx7FJ8KIxMNBHojv1CurgijdC0D"
+              href="https://drive.google.com/uc?export=download&id=1ARlVKhbYjjQkZJpAx5or96XNK0fs6Fbw"
               className="w-full cursor-pointer py-3 px-6 bg-[#ffc700] text-black rounded-md font-semibold hover:bg-black hover:text-white transition-colors mb-8"
             >
               Download Nōva
@@ -411,7 +411,7 @@ export default function Home() {
         <h2 className="text-center font-bold text-4xl">get started for free</h2>
         <p className="text-center">chatGPT on steroids</p>
         <Link
-          href="https://drive.google.com/uc?export=download&id=10zvsRbx7FJ8KIxMNBHojv1CurgijdC0D"
+          href="https://drive.google.com/uc?export=download&id=1ARlVKhbYjjQkZJpAx5or96XNK0fs6Fbw"
           className="bg-[#ffc700] cursor-pointer p-3 rounded-[4px] text-black text-xs font-bold word-spacing-wider flex items-center justify-center"
         >
           Download Nōva
