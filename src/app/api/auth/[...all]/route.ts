@@ -7,14 +7,3 @@ import { NextRequest, NextResponse } from "next/server";
 export const config = { api: { bodyParser: false } }
 
 export const { GET, POST } = toNextJsHandler(auth.handler);
-export const OPTIONS = async (request: NextRequest) => {
-  return new NextResponse('', {
-    status: 200,
-    headers: {
-      'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      'Access-Control-Allow-Credentials': 'true',
-    },
-  })
-}
