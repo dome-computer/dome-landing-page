@@ -43,26 +43,26 @@ export const auth = betterAuth({
 });
 
 export const novaa_desktop_auth = betterAuth({
-    baseURL: BASE_URL,
-    // trustedOrigins: ["https://dome.computer", "http://localhost"],
-    basePath: `api/novaa-desktop-auth`,
-    database: mongodbAdapter(mfirestore_db, {
-        client: mfirestore_client
+  baseURL: BASE_URL,
+  // trustedOrigins: ["https://dome.computer", "http://localhost"],
+  basePath: `api/novaa-desktop-auth`,
+  database: mongodbAdapter(mfirestore_db, {
+    client: mfirestore_client,
+  }),
+  emailAndPassword: {
+    enabled: true,
+  },
+  socialProviders: {
+    google: {
+      prompt: "select_account",
+      clientId: process.env.GOOGLE_OAUTH_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_OAUTH_CLIENT_SECRET,
+    },
+  },
+  hooks: {
+    after: createAuthMiddleware(async (ctx) => {
+      ctx.redirect(BASE_URL + `/open-lk`);
     }),
-    emailAndPassword: {
-        enabled: true,
-    },
-    socialProviders: {
-        google: {
-            prompt: "select_account", 
-            clientId: process.env.GOOGLE_OAUTH_CLIENT_ID as string,
-            clientSecret: process.env.GOOGLE_OAUTH_CLIENT_SECRET,
-        },
-    },    
-    hooks: {
-        after: createAuthMiddleware(async (ctx) => {
-            ctx.redirect(BASE_URL+`open-lk`)
-        }),
-    },
-    plugins: [nextCookies()], // make sure this is the last plugin in the array
-})
+  },
+  plugins: [nextCookies()], // make sure this is the last plugin in the array
+});
